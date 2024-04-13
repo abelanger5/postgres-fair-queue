@@ -1,3 +1,5 @@
+This repository accompanies [this blog post](https://docs.hatchet.run/blog/multi-tenant-queues).
+
 ## Setup
 
 **Prerequisites:**
