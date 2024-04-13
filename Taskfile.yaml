@@ -1,0 +1,30 @@
+version: "3"
+
+tasks:
+  setup:
+    cmds:
+      - |
+        task start-db && 
+        task generate-sqlc &&
+        task write-schema
+  start-db:
+    cmds:
+      - docker compose up -d
+  stop-db:
+    cmds:
+      - docker compose down
+  generate-sqlc:
+    cmds:
+      - go run github.com/sqlc-dev/sqlc/cmd/sqlc@v1.24.0 generate --file internal/dbsqlc/sqlc.yaml
+  write-schema:
+    cmds:
+      - PGPASSWORD="hatchet" psql -h localhost -U hatchet -d hatchet -f internal/dbsqlc/schema.sql
+  psql:
+    cmds:
+      - psql 'postgresql://hatchet:hatchet@127.0.0.1:5432/hatchet'
+  seed:
+    cmds:
+      - DATABASE_URL='postgresql://hatchet:hatchet@localhost:5432/hatchet' go run . seed
+  worker:
+    cmds:
+      - DATABASE_URL='postgresql://hatchet:hatchet@localhost:5432/hatchet' go run . worker

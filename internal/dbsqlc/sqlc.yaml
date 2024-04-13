@@ -1,0 +1,16 @@
+version: "2"
+sql:
+  - engine: "postgresql"
+    queries:
+      - tasks.sql
+    schema:
+      - schema.sql
+    strict_order_by: false
+    gen:
+      go:
+        package: "dbsqlc"
+        sql_package: "pgx/v5"
+        out: "."
+        emit_methods_with_db_argument: true
+        emit_result_struct_pointers: true
+        emit_json_tags: true
