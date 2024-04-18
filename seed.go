@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/abelanger5/postgres-partitioned-queue/internal/cmdutils"
-	"github.com/abelanger5/postgres-partitioned-queue/internal/dbsqlc"
+	"github.com/abelanger5/postgres-fair-queue/internal/cmdutils"
+	"github.com/abelanger5/postgres-fair-queue/internal/dbsqlc"
 	"github.com/spf13/cobra"
 )
 

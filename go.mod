@@ -1,4 +1,4 @@
-module github.com/abelanger5/postgres-partitioned-queue
+module github.com/abelanger5/postgres-fair-queue
 
 go 1.21.3
 

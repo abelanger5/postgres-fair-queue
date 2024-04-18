@@ -6,8 +6,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/abelanger5/postgres-partitioned-queue/internal/cmdutils"
-	"github.com/abelanger5/postgres-partitioned-queue/internal/dbsqlc"
+	"github.com/abelanger5/postgres-fair-queue/internal/cmdutils"
+	"github.com/abelanger5/postgres-fair-queue/internal/dbsqlc"
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgtype"
 	"github.com/jackc/pgx/v5/pgxpool"
